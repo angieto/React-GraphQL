@@ -5,6 +5,7 @@ import { connect } from "react-redux"
 
 import "./cart-icon.scss"
 import { selectCartItemsCount } from "../../redux/cart/cart-selectors"
+import { createStructuredSelector } from "reselect"
 
 const CartIcon = ({ toggleCartHidden, itemCount }) => {
     return (
@@ -16,8 +17,8 @@ const CartIcon = ({ toggleCartHidden, itemCount }) => {
 }
 
 // use memoization (reselect library) to only update itemCount if the cartItem's changed
-const mapStateToProps = (cart) => ({
-    itemCount: selectCartItemsCount(cart),
+const mapStateToProps = createStructuredSelector({
+    itemCount: selectCartItemsCount,
 })
 
 const mapDispatchToProps = (dispatch) => ({
