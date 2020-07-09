@@ -22,8 +22,8 @@ const CheckoutPage = ({ cartItems, total }) => {
     return (
         <div className="checkout-page">
             <div className="checkout-header">
-                {headerItems.map((headerName) => (
-                    <div className="header-block">
+                {headerItems.map((headerName, idx) => (
+                    <div className="header-block" key={idx}>
                         <span>{headerName}</span>
                     </div>
                 ))}
